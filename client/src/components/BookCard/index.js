@@ -7,7 +7,7 @@ function BookCard(props) {
       <div className="top">
         <div className="bookInfo">
           {props.title}
-          {props.author}{" "}
+          {props.authors}{" "}
         </div>
         <div className="buttons"> </div>
       </div>

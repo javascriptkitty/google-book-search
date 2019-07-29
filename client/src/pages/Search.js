@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import { Container } from "../components/Grid";
-import Input from "../components/Input";
+
 // import SaveBtn from '../components/SaveBtn'
 import FormBtn from "../components/FormBtn";
+import SearchBar from "../components/SearchBar";
 
 class Search extends Component {
   state = {
@@ -56,7 +57,7 @@ class Search extends Component {
     return (
       <Container>
         <form>
-          <Input
+          <SearchBar
             value={this.state.search}
             onChange={this.handleInputChange}
             name="search"

@@ -4,6 +4,7 @@ import Search from "./pages/Search";
 import Saved from "./pages/Saved";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
+import Hero from "./components/Hero";
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
       <Router>
         <div>
           <Nav />
+          <Hero />
           <Switch>
             <Route exact path="/" component={Search} />
             <Route exact path="/saved" component={Saved} />

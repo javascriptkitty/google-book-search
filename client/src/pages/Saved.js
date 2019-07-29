@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
-import Hero from "../components/Hero";
+
 import BookCard from "../components/BookCard";
 
 class Saved extends Component {
   state = {
-    book: {}
+    books: []
   };
 
   componentDidMount() {
@@ -14,18 +14,14 @@ class Saved extends Component {
   }
 
   getBook() {
-    API.getBook(this.props.params.id).then(res =>
-      this.setState({ book: res.data })
-    );
+    API.getSavedBooks().then(res => this.setState({ books: res.data }));
   }
 
   render() {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-12">
-            <Hero />
-          </Col>
+          <Col size="md-12" />
         </Row>
         <Row>
           <h2> Saved Books </h2>
