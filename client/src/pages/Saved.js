@@ -29,11 +29,12 @@ class Saved extends Component {
         <Row>
           {this.state.books.map(book => (
             <BookCard
+              showDelete={true}
               key={book.id}
               title={book.title}
               link={book.link}
               image={book.image}
-              authors={book.author}
+              authors={book.authors}
             />
           ))}
         </Row>

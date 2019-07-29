@@ -1,0 +1,18 @@
+.bookDiv {
+  display: flex;
+  flex-direction: column;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+.bottom {
+  display: flex;
+}
+img {
+  width: 50px;
+}

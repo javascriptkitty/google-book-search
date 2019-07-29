@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import { Container } from "../components/Grid";
-
-// import SaveBtn from '../components/SaveBtn'
+import { List, ListItem } from "../components/List";
 import FormBtn from "../components/FormBtn";
 import SearchBar from "../components/SearchBar";
+import BookCard from "../components/BookCard";
 
 class Search extends Component {
   state = {
     search: "",
+    key: "",
     books: [],
     title: "",
     image: "",
@@ -19,14 +20,6 @@ class Search extends Component {
 
   // componentDidMount() {
   //     this.loadBooks();
-  // }
-
-  // loadBooks = search => {
-  //     API.findBooks(search)
-  //         .then(res =>
-  //             this.setState({ books: res.data, title: "", author: "", image: '', description: "" })
-  //         )
-  //         .catch(err => console.log(err))
   // }
 
   handleInputChange = event => {
@@ -52,6 +45,27 @@ class Search extends Component {
       .catch(err => console.log(err));
   };
 
+  renderBooks(books) {
+    if (books.length) {
+      return (
+        <List>
+          {books.map(({ id, volumeInfo }) => (
+            <ListItem key={id}>
+              <BookCard
+                title={volumeInfo.title}
+                authors={volumeInfo.authors}
+                image={volumeInfo.image}
+                description={volumeInfo.description}
+              />
+            </ListItem>
+          ))}
+        </List>
+      );
+    } else {
+      return "No Books to display!";
+    }
+  }
+
   render() {
     console.log(this.state.books);
     return (
@@ -66,17 +80,7 @@ class Search extends Component {
           <FormBtn onClick={this.handleFormSubmit}>{this.state.btnTxt}</FormBtn>
         </form>
 
-        <div>
-          {this.state.books.length ? (
-            <ul>
-              {this.state.books.map((book, i) => (
-                <li key={i}>{book.volumeInfo.title}</li>
-              ))}
-            </ul>
-          ) : (
-            "No Books to display!"
-          )}
-        </div>
+        <div>{this.renderBooks(this.state.books)}</div>
       </Container>
     );
   }
