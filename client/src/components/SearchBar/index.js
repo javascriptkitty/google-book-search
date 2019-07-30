@@ -7,10 +7,10 @@ const SearchBar = props => {
   return (
     <Container fluid className="searchBar">
       <Row>
-        <h3>Book Search</h3>
+        <h2>Book Search</h2>
       </Row>
       <Row>
-        <p>Book</p>
+        <h5>Book</h5>
       </Row>
       <Row>
         <Input {...props} />

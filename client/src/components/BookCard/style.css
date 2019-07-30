@@ -1,6 +1,7 @@
 .bookDiv {
   display: flex;
   flex-direction: column;
+  padding: 10px 5px;
 }
 .top {
   display: flex;
@@ -9,7 +10,18 @@
 .buttons {
   display: flex;
   justify-content: flex-end;
+  margin-top: -20px !important;
+  padding-top: 0 !important;
 }
+
 .bottom {
   display: flex;
+}
+img {
+  margin-top: 5px;
+  margin-right: 15px;
+}
+
+h5 {
+  margin: 10px 0;
 }

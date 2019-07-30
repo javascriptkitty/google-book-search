@@ -1,28 +1,8 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
-
+import { List, ListItem } from "../components/List";
 import BookCard from "../components/BookCard";
-
-// loadBooks = () => {
-//   API.get()
-//     .then(res =>
-//       this.setState({ books: res.data, title: "", author: "", synopsis: "" })
-//     )
-//     .catch(err => console.log(err));
-// };
-
-// saveBook = id => {
-//   API.post(id)
-
-//     .catch(err => console.log(err));
-// };
-
-// deleteBook = id => {
-//   API.delete(id)
-//     .then(res => this.loadBooks())
-//     .catch(err => console.log(err));
-// };
 
 class Saved extends Component {
   state = {
@@ -45,7 +25,7 @@ class Saved extends Component {
 
   render() {
     return (
-      <Container fluid>
+      <Container>
         <Row>
           <Col size="md-12" />
         </Row>
@@ -53,19 +33,23 @@ class Saved extends Component {
           <h2> Saved Books </h2>
         </Row>
         <Row>
-          {this.state.books.map(book => (
-            <BookCard
-              id={book._id}
-              deleteBook={this.deleteBook}
-              showDelete={true}
-              showSave={false}
-              key={book.id}
-              title={book.title}
-              link={book.link}
-              image={book.image}
-              authors={book.authors}
-            />
-          ))}
+          <List>
+            {this.state.books.map(book => (
+              <ListItem>
+                <BookCard
+                  id={book._id}
+                  deleteBook={this.deleteBook}
+                  showDelete={true}
+                  showSave={false}
+                  key={book.id}
+                  title={book.title}
+                  link={book.link}
+                  image={book.image}
+                  authors={book.authors}
+                />
+              </ListItem>
+            ))}
+          </List>
         </Row>
       </Container>
     );

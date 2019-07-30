@@ -5,6 +5,7 @@ import { List, ListItem } from "../components/List";
 import FormBtn from "../components/FormBtn";
 import SearchBar from "../components/SearchBar";
 import BookCard from "../components/BookCard";
+import "./style.css";
 
 class Search extends Component {
   state = {
@@ -17,10 +18,6 @@ class Search extends Component {
     description: "",
     btnTxt: "Search"
   };
-
-  // componentDidMount() {
-  //     this.loadBooks();
-  // }
 
   handleInputChange = event => {
     const { name, value } = event.target;
