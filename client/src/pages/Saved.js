@@ -55,7 +55,7 @@ class Saved extends Component {
         <Row>
           {this.state.books.map(book => (
             <BookCard
-              id={book.id}
+              id={book._id}
               deleteBook={this.deleteBook}
               showDelete={true}
               showSave={false}
