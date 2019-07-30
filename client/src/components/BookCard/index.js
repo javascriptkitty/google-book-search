@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 import DeleteBtn from "../DeleteBtn";
+import ViewBtn from "../ViewBtn";
 import SaveBtn from "../SaveBtn";
 
 function BookCard(props) {
@@ -12,12 +13,17 @@ function BookCard(props) {
           {props.authors}
         </div>
         <div className="buttons">
-          {props.showDelete ? <DeleteBtn {...props} /> : null}
-          <SaveBtn {...props} />
+          <ViewBtn />
+          {props.showDelete ? (
+            <DeleteBtn {...props} onClick={() => props.deleteBook(props.id)} />
+          ) : null}
+          {props.showSave ? (
+            <SaveBtn {...props} onClick={() => props.saveBook(props.id)} />
+          ) : null}
         </div>
       </div>
       <div className="bottom">
-        <img alt="" scr={props.image} />
+        <img alt="" src={props.image} />
         <p> {props.description}</p>
       </div>
     </div>

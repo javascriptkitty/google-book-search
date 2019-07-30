@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
-function SaveBtn() {
-    return(
-        <button className ='btn'>Save the book!</button>
-    )
+function SaveBtn(props) {
+  return (
+    <button className="btn" {...props}>
+      Save
+    </button>
+  );
 }
 
-export default SaveBtn
+export default SaveBtn;

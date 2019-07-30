@@ -4,18 +4,44 @@ import { Col, Row, Container } from "../components/Grid";
 
 import BookCard from "../components/BookCard";
 
+// loadBooks = () => {
+//   API.get()
+//     .then(res =>
+//       this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+//     )
+//     .catch(err => console.log(err));
+// };
+
+// saveBook = id => {
+//   API.post(id)
+
+//     .catch(err => console.log(err));
+// };
+
+// deleteBook = id => {
+//   API.delete(id)
+//     .then(res => this.loadBooks())
+//     .catch(err => console.log(err));
+// };
+
 class Saved extends Component {
   state = {
     books: []
   };
 
   componentDidMount() {
-    this.getBook();
+    this.getBooks();
   }
 
-  getBook() {
+  getBooks() {
     API.getSavedBooks().then(res => this.setState({ books: res.data }));
   }
+
+  deleteBook = bookId => {
+    API.deleteBook(bookId)
+      .then(() => this.getBooks())
+      .catch(err => console.log(err));
+  };
 
   render() {
     return (
@@ -29,7 +55,10 @@ class Saved extends Component {
         <Row>
           {this.state.books.map(book => (
             <BookCard
+              id={book.id}
+              deleteBook={this.deleteBook}
               showDelete={true}
+              showSave={false}
               key={book.id}
               title={book.title}
               link={book.link}

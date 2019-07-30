@@ -35,6 +35,7 @@ class Search extends Component {
       btnTxt: "Searching..."
     });
     console.log("i love donuts");
+
     API.findBooks(this.state.search)
       .then(res =>
         this.setState({
@@ -45,17 +46,27 @@ class Search extends Component {
       .catch(err => console.log(err));
   };
 
+  saveBook = bookId => {
+    const book = this.state.books.find(({ id }) => id === bookId);
+    API.saveBook(book);
+  };
+
   renderBooks(books) {
     if (books.length) {
+      debugger;
       return (
         <List>
-          {books.map(({ id, volumeInfo }) => (
+          {books.map(({ id, title, authors, image, description }) => (
             <ListItem key={id}>
               <BookCard
-                title={volumeInfo.title}
-                authors={volumeInfo.authors}
-                image={volumeInfo.image}
-                description={volumeInfo.description}
+                id={id}
+                saveBook={this.saveBook}
+                showDelete={false}
+                showSave={true}
+                title={title}
+                authors={authors}
+                image={image}
+                description={description}
               />
             </ListItem>
           ))}
