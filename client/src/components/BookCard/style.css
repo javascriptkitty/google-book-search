@@ -8,9 +8,10 @@
   justify-content: space-between;
 }
 .buttons {
+  color: #2a878c;
   display: flex;
   justify-content: flex-end;
-  margin-top: -20px !important;
+  margin-top: -10px !important;
   padding-top: 0 !important;
 }
 
@@ -24,4 +25,7 @@ img {
 
 h5 {
   margin: 10px 0;
+}
+a {
+  color: #2a878c;
 }

@@ -2,9 +2,9 @@ import React from "react";
 
 function SaveBtn(props) {
   return (
-    <button className="btn" {...props}>
+    <a className="btn" {...props}>
       Save
-    </button>
+    </a>
   );
 }
 

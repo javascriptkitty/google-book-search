@@ -1,7 +1,11 @@
 import React from "react";
 
-function ViewBtn() {
-  return <button className="btn">View </button>;
+function ViewBtn(props) {
+  return (
+    <a href={props.link} className="btn" {...props}>
+      View{" "}
+    </a>
+  );
 }
 
 export default ViewBtn;

@@ -13,7 +13,7 @@ function BookCard(props) {
           <h5> {props.authors} </h5>
         </div>
         <div className="buttons">
-          <ViewBtn />
+          <ViewBtn {...props} />
           {props.showDelete ? (
             <DeleteBtn {...props} onClick={() => props.deleteBook(props.id)} />
           ) : null}
