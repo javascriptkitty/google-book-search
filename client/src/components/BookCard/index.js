@@ -18,7 +18,7 @@ function BookCard(props) {
             <DeleteBtn {...props} onClick={() => props.deleteBook(props.id)} />
           ) : null}
           {props.showSave ? (
-            <SaveBtn {...props} onClick={() => props.saveBook(props.id)} />
+            <SaveBtn {...props} onClick={() => props.saveBook(props.googleId)} />
           ) : null}
         </div>
       </div>
