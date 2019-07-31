@@ -45,7 +45,7 @@ class Search extends Component {
 
   saveBook = bookId => {
     debugger;
-    const book = this.state.books.find(({ _id }) => _id === bookId);
+    const book = this.state.books.find(({ googleId }) => googleId === bookId);
     API.saveBook(book);
   };
 
@@ -54,21 +54,24 @@ class Search extends Component {
       //  debugger;
       return (
         <List>
-          {books.map(({ _id, link, title, authors, image, description }) => (
-            <ListItem key={_id}>
-              <BookCard
-                id={_id}
-                link={link}
-                saveBook={this.saveBook}
-                showDelete={false}
-                showSave={true}
-                title={title}
-                authors={authors}
-                image={image}
-                description={description}
-              />
-            </ListItem>
-          ))}
+          {books.map(
+            ({ _id, googleId, link, title, authors, image, description }) => (
+              <ListItem key={_id}>
+                <BookCard
+                  googleId={googleId}
+                  id={_id}
+                  link={link}
+                  saveBook={this.saveBook}
+                  showDelete={false}
+                  showSave={true}
+                  title={title}
+                  authors={authors}
+                  image={image}
+                  description={description}
+                />
+              </ListItem>
+            )
+          )}
         </List>
       );
     } else {

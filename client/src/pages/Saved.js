@@ -46,6 +46,7 @@ class Saved extends Component {
                   link={book.link}
                   image={book.image}
                   authors={book.authors}
+                  description={book.description}
                 />
               </ListItem>
             ))}

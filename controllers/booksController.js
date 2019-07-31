@@ -44,6 +44,7 @@ module.exports = {
         } = book.volumeInfo;
 
         const bookJson = {
+          googleId: book.id,
           title: title,
           authors: authors,
           description: description,
