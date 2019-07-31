@@ -49,7 +49,7 @@ module.exports = {
           authors: authors,
           description: description,
           link: infoLink,
-          image: imageLinks.smallThumbnail
+          image: imageLinks ? imageLinks.smallThumbnail : ""
         };
 
         return bookJson;
