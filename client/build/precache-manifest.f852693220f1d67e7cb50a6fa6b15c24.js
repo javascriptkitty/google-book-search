@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/google-book-search/static/js/runtime~main.aaf871bd.js"
   },
   {
-    "revision": "6048248b0489740c3ca7",
-    "url": "/google-book-search/static/js/main.ce289ba4.chunk.js"
+    "revision": "4507b7bc194062735de8",
+    "url": "/google-book-search/static/js/main.5ee1ac03.chunk.js"
   },
   {
     "revision": "4af4cedc80fd97af350c",
     "url": "/google-book-search/static/js/2.32db3aac.chunk.js"
   },
   {
-    "revision": "6048248b0489740c3ca7",
+    "revision": "4507b7bc194062735de8",
     "url": "/google-book-search/static/css/main.fde387a4.chunk.css"
   },
   {
-    "revision": "36ac622aa4363cd326734f77629d42b3",
+    "revision": "ad0c67ec7548e2a0dad5fb330a1ea9a0",
     "url": "/google-book-search/index.html"
   }
 ];
